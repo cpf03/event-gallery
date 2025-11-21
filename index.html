@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  /* Prevent inner content (Google Drive embed) from forcing horizontal scroll */
+  iframe {
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+</style>
+
 <head>
   <meta charset="UTF-8">
   <title>Event Uploads Gallery</title>
@@ -14,7 +28,6 @@
   <!-- <h1>Event Photos & Videos</h1> -->
   <div class="gallery">
     <!-- One iframe per file -->
-    <!-- But since we are embedding the folder view, we use one big iframe -->
   </div>
   <iframe src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
           style="width:100%; height:90vh; border:none;"
