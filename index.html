@@ -2,50 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Uploads Gallery</title>
 
   <style>
-    /* --- GLOBAL FIXES --- */
+    /* Reset and prevent any horizontal overflow */
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       max-width: 100%;
-      overflow-x: hidden;
-      background: #fafafa;
+      overflow-x: hidden !important;
       font-family: Arial, sans-serif;
+      background: #fafafa;
     }
 
-    /* Wrapper prevents internal overflow */
-    .wrapper {
+    /* Wrapper prevents iframe from causing sideways scroll */
+    .iframe-wrapper {
       width: 100%;
-      overflow-x: hidden;
+      overflow: hidden;
+      display: block;
+      position: relative;
     }
 
-    /* Force iframe responsive */
-    iframe {
+    /* Force iframe to behave responsively */
+    .iframe-wrapper iframe {
       width: 100%;
+      height: 90vh;
       border: none;
       display: block;
-      overflow: hidden;
-    }
-
-    /* Mobile handling */
-    @media (max-width: 600px) {
-      iframe {
-        height: 85vh !important;
-      }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrapper">
+
+  <div class="iframe-wrapper">
     <iframe 
       src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
-      style="height:90vh;"
       allowfullscreen>
     </iframe>
   </div>
+
 </body>
 </html>
