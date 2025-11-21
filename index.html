@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Event Uploads Gallery</title>
 
-<title>Event Uploads Gallery</title>
+  <style>
+    /* --- GLOBAL FIXES --- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      background: #fafafa;
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-  /* --- GLOBAL SAFETY RESET --- */
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;     /* prevent page sideways scroll */
-    background: #fafafa;
-    font-family: Arial, sans-serif;
-  }
+    /* Wrapper prevents internal overflow */
+    .wrapper {
+      width: 100%;
+      overflow-x: hidden;
+    }
 
-  /* --- WRAPPER --- */
-  .iframe-wrapper {
-    width: 100%;
-    overflow: hidden;       /* hide Google Drive overflow */
-    position: relative;
-  }
+    /* Force iframe responsive */
+    iframe {
+      width: 100%;
+      border: none;
+      display: block;
+      overflow: hidden;
+    }
 
-  /* --- RESPONSIVE IFRAMES --- */
-  iframe {
-    width: 100%;
-    height: 90vh;
-    border: none;
-
-    /* Force content inside iframe to never exceed width */
-    display: block;
-  }
-</style>
-
+    /* Mobile handling */
+    @media (max-width: 600px) {
+      iframe {
+        height: 85vh !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<div class="iframe-wrapper">
-  <iframe 
-    src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
-    allowfullscreen>
-  </iframe>
-</div>
-
+  <div class="wrapper">
+    <iframe 
+      src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
+      style="height:90vh;"
+      allowfullscreen>
+    </iframe>
+  </div>
 </body>
 </html>
