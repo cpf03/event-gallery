@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Event Uploads Gallery</title>
+<title>Event Uploads Gallery</title>
 
-  <style>
-    /* Remove all sideways scrolling globally */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden;
-      background: #fafafa;
-      font-family: Arial, sans-serif;
-    }
+<style>
+  /* --- GLOBAL SAFETY RESET --- */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;     /* prevent page sideways scroll */
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+  }
 
-    /* Extra container to lock in the iframe width */
-    .iframe-wrapper {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden !important;
-      position: relative;
-    }
+  /* --- WRAPPER --- */
+  .iframe-wrapper {
+    width: 100%;
+    overflow: hidden;       /* hide Google Drive overflow */
+    position: relative;
+  }
 
-    /* The embedded Google Drive iframe */
-    iframe {
-      width: 100% !important;
-      max-width: 100% !important;
-      border: none;
-      overflow: hidden;
-      display: block;
-    }
-  </style>
+  /* --- RESPONSIVE IFRAMES --- */
+  iframe {
+    width: 100%;
+    height: 90vh;
+    border: none;
+
+    /* Force content inside iframe to never exceed width */
+    display: block;
+  }
+</style>
+
 </head>
-
 <body>
 
-  <div class="iframe-wrapper">
-    <iframe 
-      src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
-      style="height: 90vh;">
-    </iframe>
-  </div>
+<div class="iframe-wrapper">
+  <iframe 
+    src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
+    allowfullscreen>
+  </iframe>
+</div>
 
 </body>
 </html>
