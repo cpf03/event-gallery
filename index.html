@@ -2,46 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Uploads Gallery</title>
-
   <style>
-    /* Reset and prevent any horizontal overflow */
-    html, body {
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
-      overflow-x: hidden !important;
-      font-family: Arial, sans-serif;
-      background: #fafafa;
-    }
-
-    /* Wrapper prevents iframe from causing sideways scroll */
-    .iframe-wrapper {
-      width: 100%;
-      overflow: hidden;
-      display: block;
-      position: relative;
-    }
-
-    /* Force iframe to behave responsively */
-    .iframe-wrapper iframe {
-      width: 100%;
-      height: 90vh;
-      border: none;
-      display: block;
-    }
+    body { margin:0; padding:0; font-family: Arial, sans-serif; background:#fafafa; }
+    h1 { text-align: center; padding:20px; margin:0; background:#ffffff; border-bottom:1px solid #ddd; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:10px; padding:10px; }
+    .gallery iframe { width:100%; height:120px; border:none; }
   </style>
 </head>
-
 <body>
-
-  <div class="iframe-wrapper">
-    <iframe 
-      src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
-      allowfullscreen>
-    </iframe>
+  <!-- <h1>Event Photos & Videos</h1> -->
+  <div class="gallery">
+    <!-- One iframe per file -->
+    <!-- But since we are embedding the folder view, we use one big iframe -->
   </div>
-
+  <iframe src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
+          style="width:100%; height:90vh; border:none;"
+          allowfullscreen>
+  </iframe>
 </body>
 </html>
