@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-  /* Prevent inner content (Google Drive embed) from forcing horizontal scroll */
-  iframe {
-    max-width: 100% !important;
-    overflow: hidden;
-  }
-</style>
-
 <head>
   <meta charset="UTF-8">
   <title>Event Uploads Gallery</title>
+
+  <!-- FIX 1: Styles must be inside <head> -->
   <style>
-    body { margin:0; padding:0; font-family: Arial, sans-serif; background:#fafafa; }
-    h1 { text-align: center; padding:20px; margin:0; background:#ffffff; border-bottom:1px solid #ddd; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:10px; padding:10px; }
-    .gallery iframe { width:100%; height:120px; border:none; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden; /* Prevent sideways scrolling */
+    }
+
+    iframe {
+      width: 100% !important;
+      max-width: 100% !important;
+      border: none;
+      display: block;
+      overflow: hidden;
+    }
+
+    body { 
+      font-family: Arial, sans-serif; 
+      background:#fafafa; 
+    }
+
+    h1 { 
+      text-align: center; 
+      padding:20px; 
+      margin:0; 
+      background:#ffffff; 
+      border-bottom:1px solid #ddd; 
+    }
+
+    .gallery { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+      gap:10px; 
+      padding:10px; 
+    }
   </style>
 </head>
+
 <body>
-  <!-- <h1>Event Photos & Videos</h1> -->
-  <div class="gallery">
-    <!-- One iframe per file -->
-  </div>
-  <iframe src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
-          style="width:100%; height:90vh; border:none;"
-          allowfullscreen>
+  <iframe 
+    src="https://drive.google.com/embeddedfolderview?id=1rIaQ5JbJ4swYfuzE2iVLN0Q1dGqlXgkM#grid"
+    style="height:90vh;"
+    allowfullscreen>
   </iframe>
 </body>
 </html>
